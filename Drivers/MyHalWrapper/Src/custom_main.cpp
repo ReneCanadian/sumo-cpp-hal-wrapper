@@ -3,9 +3,10 @@
 
 extern "C" void custom_main() {
 
-    Gpio my_gpio{GPIOD, GPIO_PIN_15};
+    Gpio my_gpio{GPIOC, GPIO_PIN_3};
 
 
     while (true) {
+
     }
 }
