@@ -3,6 +3,7 @@
 
 
 class Tim{
+    friend class Pwm;
 public:
     Tim( TIM_TypeDef* TIM, uint32_t period = 99, uint32_t prescaler = 5000 -1,
          uint32_t clock_division = TIM_CLOCKDIVISION_DIV1, uint32_t counter_mode = TIM_COUNTERMODE_UP,
