@@ -5,11 +5,14 @@ enum class GpioState {SET , RESET};
 
 
 class Gpio{
+
 public:
-    Gpio(GPIO_TypeDef *port_, const uint16_t pin, const uint8_t mode = GPIO_MODE_OUTPUT_PP, const uint8_t pull_up = GPIO_NOPULL, uint8_t speed = GPIO_SPEED_FREQ_LOW);
+    Gpio(GPIO_TypeDef *port_, const uint16_t pin, const uint8_t mode = GPIO_MODE_OUTPUT_PP,
+         const uint8_t pull_up = GPIO_NOPULL, uint8_t speed = GPIO_SPEED_FREQ_LOW);
 
     void enable();
     void disable();
+    void alternative_funtion_selection(int8_t funtion);
 
 
 private:

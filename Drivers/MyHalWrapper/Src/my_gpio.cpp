@@ -5,7 +5,7 @@ port(port_) {
     my_gpio.Pin = pin; 	        // configure pin
     my_gpio.Mode = mode;	        // define it as output or input
     my_gpio.Pull = pull_up;	    // define pull up on or off
-    my_gpio.Speed = speed;	        // define needed speed LOW HIGH MEDIUM
+    my_gpio.Speed = speed;	    // define needed speed LOW HIGH MEDIUM
     HAL_GPIO_Init(port, &my_gpio); // initialize GPIOx module
     gpio = my_gpio;
 }
@@ -16,4 +16,9 @@ void Gpio::enable() {
 
 void Gpio::disable() {
     HAL_GPIO_WritePin(port, gpio.Pin, GPIO_PinState::GPIO_PIN_RESET);
+}
+
+void Gpio::alternative_funtion_selection(int8_t funtion) {
+gpio.Alternate = funtion;
+HAL_GPIO_Init(port, &gpio);
 }
